@@ -1,9 +1,21 @@
 # print your command here
 
-a. git init ...
+a. git init namename
 
-b.
+b. 
+touch bio.md && echo "Lubaya Informatsiya" > bio.md
+touch main.cpp
 
+main.cpp:
+```
+#include <iostream> 
+
+using namespace std; 
+int main() {
+	cout << "Hello";
+	return 0;
+}
+```
 c.
 
 d.
