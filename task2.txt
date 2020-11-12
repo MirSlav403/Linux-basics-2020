@@ -1,1 +1,42 @@
-# print your commands
+$ sudo docker build .
+
+Sending build context to Docker daemon  1.361MB
+Step 1/2 : FROM python:3.8
+3.8: Pulling from library/python
+e4c3d3e4f7b0: Already exists 
+101c41d0463b: Pull complete 
+8275efcd805f: Pull complete 
+751620502a7a: Pull complete 
+0a5e725150a2: Pull complete 
+397dba5694db: Pull complete 
+b453803265bc: Pull complete 
+a49354af7e01: Pull complete 
+04907be4ac1e: Pull complete 
+Digest: sha256:b3b53308cac8f5c27038c4e136a3cd891dd237829e0c4a3a8929c10bbb189545
+Status: Downloaded newer image for python:3.8
+ ---> 9756fa8d7b9d
+Step 2/2 : COPY ./src/server.py ./server.py
+ ---> 11ac6e5f7cf1
+Successfully built 11ac6e5f7cf1
+
+
+$ sudo docker images
+
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+<none>              <none>              11ac6e5f7cf1        About a minute ago   882MB
+haskell             latest              c293a5f1d6c1        9 hours ago          1.5GB
+python              3.8                 9756fa8d7b9d        8 days ago           882MB
+
+
+$ sudo docker run --rm -d -p 65432:65432 11ac6e5f7cf1 python3 server.py
+3e208ef495e54f51187dcbe86f5bc44c5e5d07749b55f13e94c616cb706ed989
+
+$ telnet localhost 65432
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+Testtesttest
+OK:Testtesttest
+Hello docker!
+OK:Hello docker!
+
