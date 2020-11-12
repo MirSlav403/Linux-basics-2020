@@ -70,8 +70,5 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(main.cpp)
 ```
 f.
-git add .
-git commit -m "Remove Makefile, add CMake"
-git checkout master
-git add .
-got commit -m "Merge branches"
+git merge cmake
+git commit -m "Merge branches"
