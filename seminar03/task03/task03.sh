@@ -1,14 +1,13 @@
 #! /bin/bash
-
-read num_1
-read var2
+read num1
+read num2
 
 result=1
 
-for ((i = 2 ; i < $num_2 ; i++)); do
-  if [[ $(($num_1 % $i)) -eq 0 && $(($num_2 % $i)) -eq 0 ]]; then
+for ((i = 2 ; i < $num2 ; i++)); do
+  if [[ $(($num1 % $i)) = 0 && $(($num2 % $i)) = 0 ]]; then
   	result=$i
   fi
 done
 
-echo $num_1 $num_2 $result
+echo $num1 $num2 $result
