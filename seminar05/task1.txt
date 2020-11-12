@@ -6,7 +6,7 @@ b.
 touch bio.md && echo "Lubaya Informatsiya" > bio.md
 touch main.cpp
 
-main.cpp:
+в main.cpp:
 ```
 #include <iostream> 
 
@@ -16,10 +16,62 @@ int main() {
 	return 0;
 }
 ```
-c.
+
+git add bio.md
+git add main.cpp
+git commit -m "Commmmmmit"
+
+c. touch makefile
+в makefile:
+```
+SHELL := /bin/bash 
+
+all: build run clean
+
+build: main.cpp
+	g++ main.cpp -o prog
+
+run: build
+	./run_main
+
+clean:
+	rm run
+
+.PHONY all clean
+```
+
+git add makefile
+git commit -m "Add makefile"
 
 d.
+//Я меняла main.cpp
+
+git add main.cpp
+git commit -m "1"
+git add main.cpp
+git commit -m "2"
+git add main.cpp
+git commit -m "3"
 
 e.
+git checkout 5eee1270f684f8a4bb84e544997fd570a9062f75
+git branch cmake
+git checkout cmake
+touch CMakeLists.txt
 
+в CMakeLists:
+```
+cmake_minimum_required(VERSION 3.10)
+
+project(q)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(main.cpp)
+```
 f.
+git add .
+git commit -m "Remove Makefile, add CMake"
+git checkout master
+git add .
+got commit -m "Merge branches"
